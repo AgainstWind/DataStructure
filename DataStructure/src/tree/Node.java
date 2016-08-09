@@ -3,9 +3,9 @@ package tree;
 public class Node {
 	
 	private Object obj;
-	private Node leftNode;
-	private Node rightNode;
-	private Node parentNode;
+	private Node leftNode=null;
+	private Node rightNode=null;
+	private Node parentNode=null;
 	private static boolean isRoot = false;
 
 	public Node(Object obj, Node leftNode, Node rightNode, Node parentNode) {
@@ -58,7 +58,15 @@ public class Node {
 	}
 	
 	public String toString (){
-		return obj.toString();
+		String rv="";
+		rv+=obj.toString();
+		if(this.leftNode!=null){
+			rv+="--left:"+leftNode.toString();
+		}
+		if(this.rightNode!=null){
+			rv+="--right:"+rightNode.toString();
+		}
+		return rv;
 	}
 	
 	public void printf(){
