@@ -1,14 +1,14 @@
 package tree;
 
-public class Node {
+public class Node<T> {
 	
-	private Object obj;
+	private T obj;
 	private Node leftNode=null;
 	private Node rightNode=null;
 	private Node parentNode=null;
 	private static boolean isRoot = false;
 
-	public Node(Object obj, Node leftNode, Node rightNode, Node parentNode) {
+	public Node(T obj, Node leftNode, Node rightNode, Node parentNode) {
 		this.obj = obj;
 		this.leftNode = leftNode;
 		this.rightNode = rightNode;
@@ -21,7 +21,7 @@ public class Node {
 		return obj;
 	}
 
-	public void setObj(Object obj) {
+	public void setObj(T obj) {
 		this.obj = obj;
 	}
 
